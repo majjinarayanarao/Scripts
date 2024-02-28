@@ -17,24 +17,21 @@ resource "aws_instance" "web" {
     volume_size = 40
   }
 }
-
 resource "aws_security_group" "Jenkins-VM-SG" {
   name        = "Jenkins-VM-SG"
   description = "Allow TLS inbound traffic"
 
-  ingress = [
-    for port in [22, 80, 443, 8080, 9000, 3000] : {
-      description      = "inbound rules"
-      from_port        = port
-      to_port          = port
+  dynamic "ingress" {
+    for_each = [22, 80, 443, 8080, 9000, 3000]
+    content {
+      description      = "inbound rule for port ${ingress.value}"
+      from_port        = ingress.value
+      to_port          = ingress.value
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      security_groups  = []
-      self             = false
     }
-  ]
+  }
 
   egress {
     from_port   = 0
@@ -47,6 +44,7 @@ resource "aws_security_group" "Jenkins-VM-SG" {
     Name = "Jenkins-VM-SG"
   }
 }
+
 
 2--provider.tf
 terraform {
