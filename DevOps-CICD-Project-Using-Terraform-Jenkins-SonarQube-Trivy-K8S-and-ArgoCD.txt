@@ -82,9 +82,28 @@ sudo apt-get update
 sudo apt-get install docker.io -y
 sudo usermod -aG docker ubuntu
 sudo usermod -aG docker jenkins  
-newgrp docker
 sudo chmod 777 /var/run/docker.sock
-docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+docker run -d --name sonar2 -p 9000:9000 sonarqube:latest
+docker attach {container id}
+or 
+#!/bin/bash
+
+# Update package lists
+sudo apt-get update
+
+# Install Docker
+sudo apt-get install docker.io -y
+
+# Add users to the docker group
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker jenkins
+
+# Adjust Docker permissions
+sudo chmod 777 /var/run/docker.sock
+
+# Run SonarQube as a Docker container
+docker run -d --name sonar2 -p 9000:9000 sonarqube:latest
+docker start sonar2
 
 #install trivy
 sudo apt-get install wget apt-transport-https gnupg lsb-release -y
