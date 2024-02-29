@@ -221,3 +221,165 @@ $ kubectl delete namespace prometheus  and $ kubectl delete namespace argocd
 $ eksctl delete cluster virtualtechbox-cluster --region ap-south-1     OR    eksctl delete cluster --region=ap-south-1 --name=virtualtechbox-cluster
 3--Delete EC2 Instance with below Terraform Command
 terraform destroy
+ vi install.sh
+    2  ./install.sh
+    3  chmod 777 install.sh
+    4  ./install.sh
+    5  rm -rf *
+    6  vi ins.sh
+    7  chmod ins.sh
+    8  chmod 777 ins.sh
+    9  ls
+   10  ./ins.sh
+   11  #!/bin/bash
+   12  # Define variables
+   13  SONAR_VERSION="9.2"  # Replace with the desired version
+   14  JAVA_VERSION="java-11-openjdk"
+   15  # Download SonarQube
+   16  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   17  unzip "sonarqube-${SONAR_VERSION}.zip"
+   18  rm "sonarqube-${SONAR_VERSION}.zip"
+   19  mv "sonarqube-${SONAR_VERSION}" sonarqube
+   20  # Install Java (if not already installed)
+   21  if ! command -v java &> /dev/null; then     echo "Java not found. Installing..."
+   22      sudo yum install -y $JAVA_VERSION; fi
+   23  # Configure Java
+   24  export JAVA_HOME=/usr/lib/jvm/$JAVA_VERSION
+   25  # Start SonarQube
+   26  cd sonarqube/bin/linux-x86-64/
+   27  ./sonar.sh start
+   28  yum install wget -yum
+   29  yum install wget
+   30  SONAR_VERSION="9.2"
+   31  JAVA_VERSION="java-11-openjdk"
+   32  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   33  unzip "sonarqube-${SONAR_VERSION}.zip"
+   34  SONAR_VERSION="9.2"  # Replace with the desired version
+   35  JAVA_VERSION="java-11-openjdk"
+   36  # Download SonarQube
+   37  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   38  unzip "sonarqube-${SONAR_VERSION}.zip"
+   39  rm "sonarqube-${SONAR_VERSION}.zip"
+   40  mv "sonarqube-${SONAR_VERSION}" sonarqube
+   41  sudo yum update -y
+   42  sudo yum install wget unzip -y
+   43  sysctl vm.max_map_count
+   44  sysctl fs.file-max
+   45  ulimit -n
+   46  ulimit -u
+   47  ls
+   48  yum install wget
+   49  vi ins.sh
+   50  ./ins.sh
+   51  cat ins.sh
+   52  #!/bin/bash
+   53  SONAR_VERSION="9.2" # Replace with the desired version
+   54  JAVA_VERSION="java-11-openjdk-devel" # Adjusted for Amazon Linux
+   55  # Navigate to the installation directory
+   56  cd /opt
+   57  # Download SonarQube
+   58  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   59  unzip "sonarqube-${SONAR_VERSION}.zip"
+   60  rm "sonarqube-${SONAR_VERSION}.zip"
+   61  mv "sonarqube-${SONAR_VERSION}" sonarqube
+   62  # Install Java (if not already installed)
+   63  if ! command -v java &> /dev/null; then     echo "Java not found. Installing...";     sudo yum install -y $JAVA_VERSION; fi
+   64  # Configure Java
+   65  export JAVA_HOME=/usr/lib/jvm/$JAVA_VERSION
+   66  # Start SonarQube
+   67  cd sonarqube/bin/linux-x86-64/
+   68  sudo ./sonar.sh start
+   69  #!/bin/bash
+   70  SONAR_VERSION="9.2" # Replace with the desired version
+   71  JAVA_VERSION="java-11-openjdk-devel" # Adjusted for Amazon Linux
+   72  # Navigate to the installation directory
+   73  cd /opt
+   74  # Download SonarQube
+   75  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   76  if [ $? -ne 0 ]; then     echo "Error: Failed to download SonarQube version $SONAR_VERSION";     exit 1; fi
+   77  vi inss.sh
+   78  chmod 777 inss.sh
+   79  ./ inss.sh
+   80  ls
+   81  ./ inss.sh
+   82  ./inss.sh
+   83  sudo su
+   84  sudo su
+   85  ls
+   86  cd /opt
+   87  ls
+   88  cd
+   89  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
+   90  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.1.zip
+   91  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.1.zip
+   92  #!/bin/bash
+   93  SONAR_VERSION="9.2" # Replace with the desired version
+   94  JAVA_VERSION="java-11-openjdk-devel" # Adjusted for Amazon Linux
+   95  # Navigate to the installation directory
+   96  cd /opt
+   97  # Download SonarQube
+   98  wget "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip"
+   99  unzip "sonarqube-${SONAR_VERSION}.zip"
+  100  rm "sonarqube-${SONAR_VERSION}.zip"
+  101  mv "sonarqube-${SONAR_VERSION}" sonarqube
+  102  # Install Java (if not already installed)
+  103  if ! command -v java &> /dev/null; then     echo "Java not found. Installing...";     sudo yum install -y $JAVA_VERSION; fi
+  104  # Configure Java
+  105  export JAVA_HOME=/usr/lib/jvm/$JAVA_VERSION
+  106  # Start SonarQube
+  107  cd sonarqube/bin/linux-x86-64/
+  108  sudo ./sonar.sh start
+  109  ls
+  110  cd
+  111  ls
+  112  rm -rf *
+  113  vi in.sh
+  114  chmod in.sh
+  115  chmod 777 in.sh
+  116  ls
+  117  ./in.sh
+  118  yum search java-11-openjdk
+  119  yum search java-11-openjdk
+  120  sudo yum install java-11-openjdk-devel
+  121  sudo yum install java-11-openjdk-devel
+  122  sudo amazon-linux-extras install epel
+  123  amazon-linux-extras install epel
+  124  sudo yum install java-11-openjdk-devel
+  125  sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  126  sudo yum install -y java-11-openjdk-devel
+  127  java --version
+  128  java -version
+  129  install java
+  130  yum install java
+  131  java -version
+  132  ./in.sh
+  133  ls
+  134  cd /opt
+  135  ls
+  136  cd sonarqube
+  137  ls
+  138  cd conf
+  139  ls
+  140  cat sonar.properties
+  141  ls
+  142  cd
+  143  cd /opt
+  144  ls
+  145  cd csonar.properties
+  146  cd  sonarqube
+  147  ls
+  148  cd bin
+  149  ls
+  150  cd  linux-x86-64
+  151  ls
+  152  ./ sonar.sh
+  153  ./sonar.sh
+  154  ./sonar.sh start
+  155  cd
+  156  useradd sonar
+  157  visudo
+  158  su - sonar
+  159   chown -R sonar:sonar /opt/sonarqube
+  160  chmod 775 /opt/sonarqube
+  161  su - sonar
+  162  history
