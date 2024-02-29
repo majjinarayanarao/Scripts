@@ -241,3 +241,15 @@ $ kubectl delete namespace prometheus  and $ kubectl delete namespace argocd
 $ eksctl delete cluster virtualtechbox-cluster --region ap-south-1     OR    eksctl delete cluster --region=ap-south-1 --name=virtualtechbox-cluster
 3--Delete EC2 Instance with below Terraform Command
 terraform destroy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sonarqube:
+sonarqube 7.8 will be java 11 required
+hardward min 2GB
+t2.micro - 1Gb
+t2.medium -4Gb
+mainly used for vulnerable of code code smile bugs
+sudo su 
+yum install wget -yum
+cd /opt
+install java
+chec
