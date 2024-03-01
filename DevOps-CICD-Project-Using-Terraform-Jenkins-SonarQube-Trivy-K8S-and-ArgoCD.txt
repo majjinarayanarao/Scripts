@@ -383,3 +383,27 @@ terraform destroy
   160  chmod 775 /opt/sonarqube
   161  su - sonar
   162  history
+  history
+    2  java -version
+    3  cd /opt
+    4  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube- 8.9.2.46101.zip
+    5  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
+    6  ls
+    7  unzip sonarqube-8.9.2.46101.zip
+    8  ls -l
+    9  rm -rf  sonarqube-8.9.2.46101.zip
+   10  ls
+   11  ls -l
+   12  useradd sonar
+   13  passwd sonar
+   14  visudo
+   15  ls -l
+   16  sudo su - sonar
+   17  cd
+   18  chown -R sonar:sonar /opt/sonarqube-8.9.2.46101
+   19  ls
+   20  cd /opt
+   21  ls
+   22  ls -l
+   23  su - sonar
+   24  cd
