@@ -407,3 +407,76 @@ terraform destroy
    22  ls -l
    23  su - sonar
    24  cd
+first setp 
+sudo su -
+amazon-linux-extras install java-openjdk11
+java -version
+cd /opt
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube- 8.9.2.46101.zip
+unzip sonarqube- 8.9.2.46101.zip
+ls -l
+useradd sonar
+passwd sonar
+123456
+123456
+visudo
+echo "sonar  ALL=(ALL)  ALL" >> /etc/sudoers
+sudo su - sonar
+cd /opt
+chown -R sonar:sonar sonarqube- 8.9.2.46101.zip
+cd /bin
+cd/linux-x86-64
+ls -l
+./sonar.sh start
+
+
+shelll.sh
+[root@ip-172-31-41-117 ~]# cat ind.sh
+#!/bin/bash
+
+# Install Java OpenJDK 11
+sudo amazon-linux-extras install java-openjdk11
+
+# Check Java version
+java -version
+
+# Navigate to /opt directory
+cd /opt
+
+# Download SonarQube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
+
+# Unzip SonarQube
+unzip sonarqube-8.9.2.46101.zip
+
+# List contents of the directory
+ls -l
+
+# Create sonar user
+sudo useradd sonar
+
+# Set password for sonar user
+echo 'sonar:123456' | sudo chpasswd
+
+# Configure sudo permissions for sonar user
+echo "sonar  ALL=(ALL)  ALL" | sudo tee -a /etc/sudoers
+
+# Switch to sonar user
+sudo su - sonar
+
+# Change ownership of SonarQube directory
+cd /opt
+sudo chown -R sonar:sonar sonarqube-8.9.2.46101
+
+# Navigate to SonarQube bin directory
+cd /opt/sonarqube/bin/linux-x86-64
+
+# List contents of the directory
+ls -l
+
+# Start SonarQube
+./sonar.sh start
+./sonar.sh status
+#!/bin/bash
+
+echo "........done....."
