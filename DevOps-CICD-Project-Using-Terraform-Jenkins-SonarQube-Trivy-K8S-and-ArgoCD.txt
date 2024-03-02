@@ -460,13 +460,12 @@ echo 'sonar:123456' | sudo chpasswd
 
 # Configure sudo permissions for sonar user
 echo "sonar  ALL=(ALL)  ALL" | sudo tee -a /etc/sudoers
+sudo chown -R sonar:sonar sonarqube-8.9.2.46101
 
 # Switch to sonar user
 sudo su - sonar
 
 # Change ownership of SonarQube directory
-cd /opt
-sudo chown -R sonar:sonar sonarqube-8.9.2.46101
 
 # Navigate to SonarQube bin directory
 cd /opt/sonarqube/bin/linux-x86-64
