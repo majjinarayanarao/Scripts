@@ -479,3 +479,11 @@ ls -l
 #!/bin/bash
 
 echo "........done....."
+
+
+M2_HOME=/opt/maven
+M2=/opt/maven/bin
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# User specific environment and startup programs
+PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2
+export PATH
